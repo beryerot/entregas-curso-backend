@@ -51,7 +51,7 @@ class ProductManager {
         return newProduct;
     }
 
-    add = async (title,description,price,code,stock, category, status = true, thumbnails = []) => {
+    add = async (title, description, price, code, stock, category, status = true, thumbnails = []) => {
         const list = await this.read()
         const error = 'There are empty fields'
         const nextID = this.getNextID(list)

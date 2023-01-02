@@ -1,19 +1,26 @@
-<div>
-    <h1>Products list</h1>
-    {{#if products}}
-        {{#each products}}
-            <ul>
-                <l><h2>{{this.title}}</h2>
-                <p>Precio: ${{this.price}}</p>
-                <p>Stock: {{this.stock}}</p>
-                </l>
-                <hr>
-            </ul>
-        {{/each}}
-    {{else}}
-        <p>Products list is empty</p>
-    {{/if}}
+<div style="width: 80vw; display: flex; justify-content:space-between; margin-left: auto; margin-right:auto; margin-top:30px">
+<form id="addProductForm">
+    <p style="padding: 10px; margin: 0px">Add product</p>
+    <br>
+    <input id="title" type="text" placeholder="Title"><br>
+    <input id="description" type="text" placeholder="Description"><br>
+    <input id="code" type="text" placeholder="Code"><br>
+    <input id="price" type="number" placeholder="Price"><br>
+    <input id="stock" type="number" placeholder="Stock"><br>
+    <input id="category" type="text" placeholder="Category"><br>
+    <button id="addBtn" type="submit">Add</button>
+</form>
+<form id="deleteForm">
+    <p>Delete product</p>
+    <br>
+    <input id="deleteID" type="number" placeholder="Insert ID"><br>
+    <button id="deleteBtn" type="submit">Delete</button>
+</form>
 </div>
+<br>
+<hr><br><hr>
+<h1>Product list</h1>
+<div id="products"></div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>
